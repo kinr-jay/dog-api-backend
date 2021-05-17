@@ -16,7 +16,7 @@ const express = require("express");
 const app = express();
 
 //OTHER IMPORTS
-const morgan = require("morgan");
+const logger = require("morgan")
 const dogRouter = require("./controllers/dog");
 
 ////////////
@@ -24,7 +24,7 @@ const dogRouter = require("./controllers/dog");
 ////////////
 NODE_ENV === "production" ? app.use(cors(corsOptions)) : app.use(cors());
 app.use(express.json());
-app.use(morgan("tiny")); //logging
+app.use(logger("tiny"))
 
 ///////////////
 //Routes and Routers
